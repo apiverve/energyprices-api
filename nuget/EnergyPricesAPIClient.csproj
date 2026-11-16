@@ -1,0 +1,107 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net20;net35;net40;net45;netstandard2.0;netstandard2.1;net6.0;net8.0</TargetFrameworks>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Energy Prices API</Title>
+    <Version>1.2.6</Version>
+    <Authors>APIVerve</Authors>
+    <Company>APIVerve</Company>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <IncludeContentInPack>true</IncludeContentInPack>
+
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <PackageProjectUrl>https://apiverve.com/marketplace/energyprices?utm_source=nuget&amp;utm_medium=referral&amp;utm_content=homepage</PackageProjectUrl>
+    <SignAssembly>False</SignAssembly>
+    <Description>Energy Prices returns the latest daily closing spot price for WTI and Brent crude, Henry Hub natural gas and US gasoline, diesel, heating oil, propane and jet fuel benchmarks, with the previous close, the daily change and the 52-week high and low. Convert to barrels, gallons, liters, MMBtu, therms or MWh, ask for several benchmarks at once, or pull a daily or weekly history.</Description>
+    <RepositoryUrl>https://github.com/apiverve/energyprices-api</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>oil-price-api;crude-oil-price-api;wti-price-api;brent-price-api;natural-gas-price-api;api;rest;http;client;apiverve;wrapper;sdk</PackageTags>
+    <Copyright>©2026 APIVerve. All Rights Reserved</Copyright>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <PackageIcon>favicon@128.png</PackageIcon>
+    <BaseOutputPath>.\bin</BaseOutputPath>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <PackageId>APIVerve.API.EnergyPrices</PackageId>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+
+    <!-- Built from a generator checkout, not this repo: its git state would stamp the wrong
+         commit onto RepositoryUrl. -->
+    <EnableSourceLink>false</EnableSourceLink>
+    <EnableSourceControlManagerQueries>false</EnableSourceControlManagerQueries>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- Package Release Notes -->
+    <PackageReleaseNotes>Energy Prices API client for .NET, version 1.2.6. Features include async/await support, automatic retries, custom headers, request logging, and cancellation token support.</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="favicon%40128.png" />
+    <None Remove="LICENSE" />
+    <None Remove="Readme.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <PackageReference Include="System.Net.Http">
+      <Version>4.3.4</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Net.Http">
+      <Version>4.3.4</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+    <PackageReference Include="System.Net.Http">
+      <Version>4.3.4</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="System.Net.Http">
+      <Version>4.3.4</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="favicon@128.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </Resource>
+  </ItemGroup>
+
+</Project>
